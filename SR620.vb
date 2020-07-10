@@ -36,45 +36,8 @@ Public Class Form1
 
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        'kondisi jika mode tidak dipilih
-
-        If RadioButton3.Checked Or RadioButton4.Checked Or RadioButton5.Checked Or RadioButton6.Checked Or RadioButton7.Checked Or RadioButton8.Checked Or RadioButton9.Checked Or RadioButton10.Checked Or RadioButton13.Checked Then
-
-            md = md
-        Else
-            MsgBox("Please choose measurement mode")
-            Exit Sub
-        End If
-        'jika cuztomized mode belum dipilih 
-        ' If TextBox4.Enabled = True And TextBox4.Text = "" Then
-        'MsgBox("Please fill the syntax in cuztomized mode box !")
-        'Label11.ForeColor = Color.Red
-
-        'Exit Sub
-        'End If
-
-        'If TextBox1.Enabled = True And TextBox1.Text = "" Then
-        'MsgBox("Please fill the function in cuztomized mode box !")
-        'Label10.ForeColor = Color.Red
-        'Exit Sub
-        'End If
-
         ''Label18.Text = ""
-        TextBox7.Text = ""
-        TextBox8.Text = ""
-        TextBox9.Text = ""
-        TextBox9.Text = ""
-        TextBox10.Text = ""
-        TextBox12.Text = ""
-        Label4.Text = "Recent data taken"
-
-        Button1.Enabled = False
-        Button3.Enabled = False
-        Button4.Enabled = False
-        Button5.Enabled = False
-        Button6.Enabled = False
-        Button7.Enabled = False
-        Button8.Enabled = False
+        Label4.Enabled = True
         '  Button4.Enabled = False
         '  Button2.Enabled = True
 
@@ -156,6 +119,7 @@ Public Class Form1
         End If
 
         'MENENTUKAN MODE
+        'MENENTUKAN MODE
         If RadioButton6.Checked Then
             md = "MODE0"
             Form2.Label21.Text = "Time Interval"
@@ -226,7 +190,7 @@ Public Class Form1
 
         'MENENTUKAN SAMPLE SIZE
 
-        sz = CDec(ComboBox3.Text * ComboBox2.Text)
+        sz = Val(ComboBox3.Text * ComboBox2.Text)
 
         'MENENTUKAN MODE DISPLAY
 
@@ -259,22 +223,17 @@ Public Class Form1
 
         If ComboBox6.Text = "Internal" Then
             clk = "CLCK0"
-            ComboBox7.Enabled = False
-        End If
-
-        If clk = "CLCK1" Then
+        Else
+            clk = "CLCK1"
             ComboBox7.Enabled = True
         End If
 
         'MENENTUKAN FREQUENCY SOURCE
         If ComboBox7.Text = "5 MHz" Then
             fsrc = "CLKF1"
-        ElseIf ComboBox7.Text = "10 MHz" Then
-            fsrc = "CLKF0"
         Else
-            ComboBox6.Text = "Internal"
-            'fsrc = "CLKF0"
-            ComboBox7.Enabled = False
+            fsrc = "CLKF0"
+            ComboBox7.Enabled = True
         End If
 
         'MENENTUKAN IMPEDANCE
@@ -290,15 +249,12 @@ Public Class Form1
 
         meter = New NationalInstruments.NI4882.Device(0, 16, 0, TimeoutValue.T100s) 'masukan alamat GPIB untuk meter
         'combobox1
-
+        meter.Write(TextBox5.Text)
         'menentukan gate/arm
         '  If ComboBox1.Text = "1.0 s" Then
         'gate = "ARMM5"
         ' End If
         ' meter.Write(cpl)
-        meter.Write(TextBox5.Text)
-        'meter.write(TextBox7.Text)
-        'meter.write(TextBox9.Text)
         meter.Write("LEVL" + chn + "," + TextBox11.Text)
         meter.Write("TMOD" + chn + "," + alv)
         meter.Write("TSLP" + chn + "," + slp)
@@ -324,23 +280,26 @@ Public Class Form1
                 l.SubItems.Add("")
             Next
             For Me.iterasi = 2 To tipeA
-
+                Button7.Enabled = False
+                Button8.Enabled = False
                 GroupBox3.Enabled = False
                 GroupBox5.Enabled = False
                 GroupBox1.Enabled = False
                 GroupBox4.Enabled = False
-                GroupBox9.Enabled = False
+                GroupBox8.Enabled = False
                 GroupBox7.Enabled = False
                 GroupBox2.Enabled = False
                 GroupBox6.Enabled = False
+                Button1.Enabled = False
+                Button6.Enabled = False
                 ' 
                 '  meter.Write("SIZE1")
                 ' meter.Write(":FREQ:ARM:STAR:SOUR IMM") 'These 3 lines enable using
                 ' meter.Write(":FREQ:ARM:STOP:SOUR TIM") 'time arming with a 0.1 second
                 ' meter.Write("ARMM5")
-                '  Button4.Enabled = False
-                ' Button3.Enabled = False
-
+                Button4.Enabled = False
+                Button3.Enabled = False
+                Button5.Enabled = False
                 meter.Write(disp) '--->mendisplaykan angka
 
                 InstRead(0) = Val(meter.ReadString)
@@ -358,7 +317,7 @@ Public Class Form1
 
                 ' End If
 
-                wait(1)
+                wait(sz)
 
             Next
         Next
@@ -425,7 +384,7 @@ Public Class Form1
         div = Val(Val(CDec(TextBox9.Text)) / Val(CDec(TextBox2.Text)))
         TextBox9.Text = div
 
-        '  Label4.Enabled = True
+        Label4.Enabled = True
         '  Label4.Text = "Jml. data terambil"
         '  Button3.Enabled = True
         '  Button4.Enabled = True
@@ -434,8 +393,9 @@ Public Class Form1
         GroupBox5.Enabled = True
         GroupBox1.Enabled = True
         GroupBox4.Enabled = True
-        GroupBox9.Enabled = True
+        GroupBox8.Enabled = True
         GroupBox7.Enabled = True
+        GroupBox2.Enabled = True
         Button1.Enabled = True
         Button3.Enabled = True
         Button4.Enabled = True
@@ -444,13 +404,18 @@ Public Class Form1
         Button7.Enabled = True
         Button8.Enabled = True
 
-
+        '  Label4.Enabled = True
+        '  Label4.Text = "Jml. data terambil"
+        Button3.Enabled = True
+        Button4.Enabled = True
+        Button7.Enabled = True
+        Button8.Enabled = True
+        Button1.Enabled = True
+        Button6.Enabled = True
         MsgBox("Pengukuran Selesai!")
         meter.Write("locL0")
         ' reset()
         Exit Sub
-
-
     End Sub
     Public Sub wait(ByVal Dt As Double)
         Dim IDay As Double = Date.Now.DayOfYear
@@ -475,12 +440,7 @@ Public Class Form1
         Button2.Enabled = True
         Label6.Text = ""
         Button6.Enabled = True
-        TextBox7.Text = ""
-        TextBox8.Text = ""
-        TextBox9.Text = ""
-        TextBox9.Text = ""
-        TextBox10.Text = ""
-        TextBox12.Text = ""
+
         'TextBox4.Text = ""
         'TextBox5.Text = ""
         'TextBox7.Text = ""
@@ -493,11 +453,8 @@ Public Class Form1
 
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        
-        Button6.Enabled = True
-        Button7.Enabled = True
-        Button8.Enabled = True
-        Label4.Text = "Jml. Data terambil"
+
+        Label4.Enabled = False
         Button6.Enabled = True
         'TextBox6.Enabled = True
         'TextBox3.Enabled = True
@@ -572,36 +529,28 @@ Public Class Form1
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+        GroupBox8.Enabled = False
         'Dim idn As String
-        If Label6.Text = "Label6" Then
-            Label6.Text = 0
-        End If
+        Label4.Enabled = False
+        TextBox6.Enabled = False
+        TextBox5.Enabled = False
         meter = New NationalInstruments.NI4882.Device(0, 16, 0, TimeoutValue.T100s) 'masukan alamat GPIB untuk meter
         meter.Write("*IDN?") '--->mendisplay identitas
-
-        Label23.Text = meter.ReadString
-        Label10.Enabled = False
-        Label11.Enabled = False
-        TextBox1.Enabled = False
-        TextBox4.Enabled = False
-        TextBox6.Text = ""
-        TextBox6.Enabled = False
-        TextBox5.Text = ""
-        TextBox5.Enabled = False
-        GroupBox6.Enabled = False
         GroupBox2.Enabled = False
+        Label23.Text = meter.ReadString
+
+
         'Label23 = idn
         ' Label4.Text = ""
         Label2.Text = Date.Now.ToString("dd/MM/yyyy")
-        'Label6.Text = ""
+        Label6.Text = ""
         RadioButton1.Checked = False
         RadioButton4.Checked = False
         Label24.Enabled = False
         TextBox11.Enabled = False
         meter.Write("locL0")
-        
         Exit Sub
-       
 
     End Sub
 
@@ -666,98 +615,75 @@ Public Class Form1
     End Sub
 
     Private Sub Button5_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
-
-        Form2.Chart1.Series(0).Points.Clear()
-  
         Form2.Show()
     End Sub
 
+    
 
+    
 
-
-
-
-    Private Sub RadioButton14_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton14.CheckedChanged
+  
+    Private Sub RadioButton14_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Label24.Enabled = True
         TextBox11.Enabled = True
     End Sub
 
-    Private Sub RadioButton12_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton12.CheckedChanged
+    Private Sub RadioButton12_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Label24.Enabled = False
         TextBox11.Enabled = False
     End Sub
 
 
-    Private Sub ComboBox5_SelectedIndexChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub ComboBox5_SelectedIndexChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox5.SelectedIndexChanged
         If ComboBox5.Text = "TRIG" Then
             MsgBox("This mode has no output in output table. Output just in instrument display")
 
         End If
     End Sub
 
-
-    Private Sub RadioButton13_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton13.CheckedChanged
-        Label10.Enabled = True
-        Label11.Enabled = True
-        TextBox1.Enabled = True
-        TextBox4.Enabled = True
-        GroupBox2.Enabled = True
-    End Sub
-
-
-    Private Sub Label6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label6.Click
-
-    End Sub
-
+    
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
         TextBox6.Enabled = True
         TextBox5.Enabled = True
-        GroupBox6.Enabled = True
     End Sub
 
     Private Sub Button8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button8.Click
-        TextBox6.Text = ""
-        TextBox6.Enabled = False
-        TextBox5.Text = ""
-        TextBox5.Enabled = False
         GroupBox6.Enabled = False
     End Sub
 
-    Private Sub RadioButton9_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton9.CheckedChanged
-        GroupBox2.Enabled = False
-    End Sub
-
-    Private Sub RadioButton8_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton8.CheckedChanged
-        GroupBox2.Enabled = False
-    End Sub
-
-    Private Sub RadioButton7_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton7.CheckedChanged
-        GroupBox2.Enabled = False
-    End Sub
-
-    Private Sub RadioButton10_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton10.CheckedChanged
-        GroupBox2.Enabled = False
-    End Sub
-
-    Private Sub RadioButton4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton4.CheckedChanged
-        GroupBox2.Enabled = False
-    End Sub
-
-    Private Sub RadioButton5_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton5.CheckedChanged
-        GroupBox2.Enabled = False
+    Private Sub RadioButton13_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton13.CheckedChanged
+        GroupBox8.Enabled = True
     End Sub
 
     Private Sub RadioButton6_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton6.CheckedChanged
-        GroupBox2.Enabled = False
+        GroupBox8.Enabled = False
     End Sub
 
-    Private Sub TextBox4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox4.TextChanged
-        Label11.ForeColor = Color.Black
+    Private Sub RadioButton5_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton5.CheckedChanged
+        GroupBox8.Enabled = False
     End Sub
 
-    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBox1.TextChanged
-        Label10.ForeColor = Color.Black
+    Private Sub RadioButton4_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton4.CheckedChanged
+        GroupBox8.Enabled = False
     End Sub
 
-   
+    Private Sub RadioButton10_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton10.CheckedChanged
+        GroupBox8.Enabled = False
+    End Sub
+
+    Private Sub GroupBox3_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox3.Enter
+
+    End Sub
+
+    Private Sub RadioButton7_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton7.CheckedChanged
+        GroupBox8.Enabled = False
+    End Sub
+
+    Private Sub RadioButton8_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton8.CheckedChanged
+        GroupBox8.Enabled = False
+    End Sub
+
+    Private Sub RadioButton9_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton9.CheckedChanged
+        GroupBox8.Enabled = False
+    End Sub
 End Class

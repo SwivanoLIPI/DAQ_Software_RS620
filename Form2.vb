@@ -2,8 +2,7 @@
 
 
     Private Sub Form2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-       
-        'membuat grafik
+        
         Dim k As Integer
 
         For k = 1 To Form1.TextBox2.Text
@@ -15,7 +14,6 @@
             Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Spline
 
         Next k
-        
 
     End Sub
     Public Sub wait(ByVal Dt As Double)
@@ -35,7 +33,7 @@
 
         Loop
     End Sub
-
+ 
 
     Private Sub Button7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
         Dim zoomin As String
@@ -76,5 +74,11 @@
         End With
     End Sub
 
- 
+    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub Button7_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button7.Click
+
+    End Sub
 End Class
