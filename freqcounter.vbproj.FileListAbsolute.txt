@@ -1,0 +1,86 @@
+D:\freqcounter\freqcounter\bin\Release\freqcounter.exe.config
+D:\freqcounter\freqcounter\bin\Release\freqcounter.exe
+D:\freqcounter\freqcounter\bin\Release\freqcounter.pdb
+D:\freqcounter\freqcounter\bin\Release\freqcounter.xml
+D:\freqcounter\freqcounter\obj\x86\Release\ResolveAssemblyReference.cache
+D:\freqcounter\freqcounter\obj\x86\Release\freqcounter.Form1.resources
+D:\freqcounter\freqcounter\obj\x86\Release\freqcounter.Resources.resources
+D:\freqcounter\freqcounter\obj\x86\Release\GenerateResource.read.1.tlog
+D:\freqcounter\freqcounter\obj\x86\Release\GenerateResource.write.1.tlog
+D:\freqcounter\freqcounter\obj\x86\Release\freqcounter.exe
+D:\freqcounter\freqcounter\obj\x86\Release\freqcounter.xml
+D:\freqcounter\freqcounter\obj\x86\Release\freqcounter.pdb
+D:\AGILENT\freqcounter\obj\x86\Release\ResolveAssemblyReference.cache
+D:\AGILENT\freqcounter\obj\x86\Release\GenerateResource.read.1.tlog
+D:\AGILENT\freqcounter\obj\x86\Release\GenerateResource.write.1.tlog
+D:\AGILENT\freqcounter\bin\Release\freqcounter.exe.config
+D:\AGILENT\freqcounter\bin\Release\freqcounter.exe
+D:\AGILENT\freqcounter\bin\Release\freqcounter.pdb
+D:\AGILENT\freqcounter\bin\Release\freqcounter.xml
+D:\AGILENT\freqcounter\obj\x86\Release\freqcounter.Form1.resources
+D:\AGILENT\freqcounter\obj\x86\Release\freqcounter.Resources.resources
+D:\AGILENT\freqcounter\obj\x86\Release\freqcounter.exe
+D:\AGILENT\freqcounter\obj\x86\Release\freqcounter.xml
+D:\AGILENT\freqcounter\obj\x86\Release\freqcounter.pdb
+D:\frequency counteri\AGILENT\freqcounter\bin\Release\freqcounter.exe.config
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\freqcounter.exe
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\freqcounter.xml
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\freqcounter.pdb
+D:\frequency counteri\AGILENT\freqcounter\bin\Release\freqcounter.exe
+D:\frequency counteri\AGILENT\freqcounter\bin\Release\freqcounter.pdb
+D:\frequency counteri\AGILENT\freqcounter\bin\Release\freqcounter.xml
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\ResolveAssemblyReference.cache
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\freqcounter.Form1.resources
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\freqcounter.Resources.resources
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\GenerateResource.read.1.tlog
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\GenerateResource.write.1.tlog
+D:\frequency counteri\AGILENT\freqcounter\obj\x86\Release\freqcounter.Form2.resources
+D:\AGILENT\freqcounter\obj\x86\Release\freqcounter.Form2.resources
+D:\AGILENT\freqcounter\obj\x86\Release\freqcounter.vbproj.GenerateResource.Cache
+G:\AGILENT\freqcounter\bin\Release\freqcounter.exe.config
+G:\AGILENT\freqcounter\bin\Release\freqcounter.exe
+G:\AGILENT\freqcounter\bin\Release\freqcounter.pdb
+G:\AGILENT\freqcounter\bin\Release\freqcounter.xml
+G:\AGILENT\freqcounter\obj\x86\Release\ResolveAssemblyReference.cache
+G:\AGILENT\freqcounter\obj\x86\Release\freqcounter.Form2.resources
+G:\AGILENT\freqcounter\obj\x86\Release\freqcounter.Form1.resources
+G:\AGILENT\freqcounter\obj\x86\Release\freqcounter.Resources.resources
+G:\AGILENT\freqcounter\obj\x86\Release\GenerateResource.read.1.tlog
+G:\AGILENT\freqcounter\obj\x86\Release\GenerateResource.write.1.tlog
+G:\AGILENT\freqcounter\obj\x86\Release\freqcounter.exe
+G:\AGILENT\freqcounter\obj\x86\Release\freqcounter.xml
+G:\AGILENT\freqcounter\obj\x86\Release\freqcounter.pdb
+D:\SR620\freqcounter\bin\Release\freqcounter.exe.config
+D:\SR620\freqcounter\bin\Release\freqcounter.exe
+D:\SR620\freqcounter\bin\Release\freqcounter.pdb
+D:\SR620\freqcounter\bin\Release\freqcounter.xml
+D:\SR620\freqcounter\obj\x86\Release\ResolveAssemblyReference.cache
+D:\SR620\freqcounter\obj\x86\Release\freqcounter.Form2.resources
+D:\SR620\freqcounter\obj\x86\Release\freqcounter.Form1.resources
+D:\SR620\freqcounter\obj\x86\Release\freqcounter.Resources.resources
+D:\SR620\freqcounter\obj\x86\Release\GenerateResource.read.1.tlog
+D:\SR620\freqcounter\obj\x86\Release\GenerateResource.write.1.tlog
+D:\SR620\freqcounter\obj\x86\Release\freqcounter.exe
+D:\SR620\freqcounter\obj\x86\Release\freqcounter.xml
+D:\SR620\freqcounter\obj\x86\Release\freqcounter.pdb
+D:\SR620_2\freqcounter\obj\x86\Release\freqcounter.vbprojResolveAssemblyReference.cache
+D:\SR620_2\freqcounter\obj\x86\Release\freqcounter.exe
+D:\SR620_2\freqcounter\obj\x86\Release\freqcounter.xml
+D:\SR620_2\freqcounter\obj\x86\Release\freqcounter.pdb
+D:\SR620_2\freqcounter\obj\x86\Release\freqcounter.Form2.resources
+D:\SR620_2\freqcounter\obj\x86\Release\freqcounter.Resources.resources
+D:\SR620_2\freqcounter\obj\x86\Release\freqcounter.Form1.resources
+D:\SR620_2\freqcounter\obj\x86\Release\freqcounter.vbproj.GenerateResource.Cache
+G:\SR620_3\freqcounter\bin\Release\freqcounter.exe.config
+G:\SR620_3\freqcounter\bin\Release\freqcounter.exe
+G:\SR620_3\freqcounter\bin\Release\freqcounter.pdb
+G:\SR620_3\freqcounter\bin\Release\freqcounter.xml
+G:\SR620_3\freqcounter\obj\x86\Release\ResolveAssemblyReference.cache
+G:\SR620_3\freqcounter\obj\x86\Release\freqcounter.Form2.resources
+G:\SR620_3\freqcounter\obj\x86\Release\freqcounter.Resources.resources
+G:\SR620_3\freqcounter\obj\x86\Release\freqcounter.Form1.resources
+G:\SR620_3\freqcounter\obj\x86\Release\GenerateResource.read.1.tlog
+G:\SR620_3\freqcounter\obj\x86\Release\GenerateResource.write.1.tlog
+G:\SR620_3\freqcounter\obj\x86\Release\freqcounter.exe
+G:\SR620_3\freqcounter\obj\x86\Release\freqcounter.xml
+G:\SR620_3\freqcounter\obj\x86\Release\freqcounter.pdb
